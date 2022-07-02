@@ -38,11 +38,12 @@ body {
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 5vh;
 }
 
 .description {
     font-family: 'Inter';
+    font-size: 2vh;
 }
 
 .main-container {
@@ -52,10 +53,8 @@ body {
     align-items: center;
     margin: 0 auto;
     margin-top: 30vh;
-    max-width: 40vw;
+    max-width: 50vw;
 }
-
-
 
 .start:hover {
     background-color: #4d5b9ed9;
@@ -117,7 +116,8 @@ body {
 .start, .check-ans {
     font-family: 'Inter';
     margin-top: 24px;
-    padding: 1rem 4rem;
+    padding: 1.75vh 8vw;
+    font-size: 0.85rem;
     background-color: #4D5B9E;
     color:#F5F7FB;
     border: none;
@@ -157,12 +157,12 @@ body {
 
 .score {
     position: relative;
-    left: 10%;
+    left: 1rem;
 }
 
 .play-again {
     position: relative;
-    right: 0;
+    right: -2rem;
 }
 
 .correct {
@@ -181,8 +181,20 @@ body {
     }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 500px) {
     .quiz {
         max-width: 90%;
+    }
+    .ques-title {
+        font-size: 0.85rem;
+    }
+    .option {
+        font-size: 0.8rem;
+    }
+    .options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0;
+        margin: 0.1rem;
     }
 }
