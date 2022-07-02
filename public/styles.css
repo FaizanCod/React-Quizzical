@@ -123,6 +123,9 @@ body {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
 }
 
 .check-ans {
@@ -137,7 +140,7 @@ body {
     transition: ease-out 0.4s;
 }
 
-.check-ans:hover {
+.check-ans:hover, .start:hover {
     box-shadow: inset 400px 0 0 0 #101744;
 }
 

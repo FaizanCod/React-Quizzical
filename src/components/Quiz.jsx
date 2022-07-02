@@ -37,6 +37,7 @@ function Quiz() {
     const [httpError, setHttpError] = useState();
     const [selectedStatus, setSelectedStatus] = useState(false);
     const [score, setScore] = useState(-1);
+    const [isRestarted, setIsRestarted] = useState(false);
 
     // const [chosenAnswersCorrect, setChosenAnswersCorrect] = useState([]);
     console.log(answers);
@@ -51,6 +52,18 @@ function Quiz() {
         setScore(score);
         setSelectedStatus(true);
         // return score;
+    }
+
+    function handleRestart(text) {
+        // event.preventDefault();
+        if (text === "Play again") {
+            console.log('hello');
+            setAllQues([]);
+            setAnswers([]);
+            setScore(-1);
+            setSelectedStatus(false);
+            setIsRestarted(true);
+        }
     }
     
     useEffect(() => {
@@ -83,7 +96,7 @@ function Quiz() {
             setHttpError(err.message);
         });
         // console.log(httpError);
-    }, []);
+    }, [isRestarted]);
     console.log(allQues);
 
     return (
@@ -105,10 +118,12 @@ function Quiz() {
             <div className="footer">
                 {score === -1 ? null : <p className="score">You scored {score}/{allQues.length} correct answers</p>}
                 <button 
+                    id="restart"
                     className={`check-ans ${score === -1 ? "" : "play-again"}`}
                     onClick={() => {
                         // console.log(answers);
                         checkAnswers();
+                        handleRestart(document.getElementById('restart').textContent);
                     }}
                 >
                     {

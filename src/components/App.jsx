@@ -15,16 +15,16 @@ function App() {
                 <img src="/images/blob2.png" className="blob2"></img>
             </div>
             {
-                // !hasStarted ? 
-                // <>
-                //     <Main />
-                //     <button 
-                //         className="start"
-                //         onClick={startQuiz}
-                //     >
-                //         Start Quiz
-                //     </button>
-                // </> :
+                !hasStarted ? 
+                <>
+                    <Main />
+                    <button 
+                        className="start"
+                        onClick={startQuiz}
+                    >
+                        Start Quiz
+                    </button>
+                </> :
                 <Quiz />
             }
         </div>
